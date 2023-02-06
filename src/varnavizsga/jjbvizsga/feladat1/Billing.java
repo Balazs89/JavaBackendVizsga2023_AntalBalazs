@@ -4,15 +4,21 @@ public class Billing {
 	
 	
 
-    public static int priceWithVAT(int vatRate, int priceWithoutVAT) {
+    public static Double priceWithVAT(double vatRate, int priceWithoutVAT) {
         
-	    return (vatRate+100)/(100)*(priceWithoutVAT);
+    	Double vatAmount = vatRate/100*priceWithoutVAT;
+	    return Math.round(priceWithoutVAT)+vatAmount;
     	
         
     }
 
-    public static int priceWithoutVAT(int vatRate, int priceWithVAT) {
-        return -1;
+    public static Double priceWithoutVAT(double vatRate, int priceWithVAT) {
+    	
+    	Double vatAmount = vatRate/100*priceWithVAT;
+	    return Math.round(priceWithVAT)-vatAmount;
+        
+        
+        
     }
 
     public static String displayBook(String author, String title, int priceWithVAT) {
