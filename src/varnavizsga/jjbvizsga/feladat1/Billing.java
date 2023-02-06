@@ -1,9 +1,14 @@
 package varnavizsga.jjbvizsga.feladat1;
 
 public class Billing {
+	
+	
 
     public static int priceWithVAT(int vatRate, int priceWithoutVAT) {
-        return -1;
+        
+	    return (vatRate+100)/(100)*(priceWithoutVAT);
+    	
+        
     }
 
     public static int priceWithoutVAT(int vatRate, int priceWithVAT) {
